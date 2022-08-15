@@ -1,0 +1,28 @@
+
+<div class="card-wrapper">
+    <input [(ngModel)]="inputDate" type="date" id="date" max="{{ currentdate }}" (blur)="onChangeFetch()" value="{{ date }}">
+    <div>{{apiResponseData?.date}}</div>
+
+    <div [ngSwitch]="media_type">
+        <div *ngSwitchCase="'image'">
+            <img class="card-image"src="{{ url }}"/>
+        </div>
+         <div *ngSwitchCase="'video'">
+             <youtube-player
+        videoId="{{ youtubeId }}"
+        suggestedQuality="highres"
+        [height]="250"
+        [width]="500"
+        [startSeconds]="4"
+            [endSeconds]="300">
+        </youtube-player>
+        </div>
+    </div>
+
+    <div *ngIf="copyright">copyright: {{copyright}}</div>
+
+    <h4>{{title}}</h4>
+    <p>{{description}}</p>
+</div>
+
+
