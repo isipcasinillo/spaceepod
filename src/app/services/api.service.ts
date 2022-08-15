@@ -14,6 +14,8 @@ export class ApiService {
 
 
   fetchApi(currentDate: string): Observable<Object> {
-    return this.http.get(api_url + currentDate)
+    // return this.http.get(api_url + currentDate)
+    // return this.http.get(`http://localhost:3000/api/${currentDate}`)
+    return this.http.get(`/api/${currentDate}`)
   }
 }

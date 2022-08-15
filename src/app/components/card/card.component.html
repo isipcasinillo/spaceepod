@@ -1,7 +1,7 @@
 
 <div class="card-wrapper">
     <input [(ngModel)]="inputDate" type="date" id="date" max="{{ currentdate }}" (blur)="onChangeFetch()" value="{{ date }}">
-    <div>{{apiResponseData?.date}}</div>
+    <div>{{date}}</div>
 
     <div [ngSwitch]="media_type">
         <div *ngSwitchCase="'image'">

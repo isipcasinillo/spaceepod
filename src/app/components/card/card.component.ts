@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/services/api.service';
-
+import * as moment from 'moment';
 
 
 @Component({
@@ -12,7 +12,6 @@ export class CardComponent implements OnInit {
   apiResponseData: any;
   inputDate: string = '';
   currentdate: string = '';
-
   date: string = '';
   media_type: string = '';
   copyright?: string;
@@ -24,10 +23,10 @@ export class CardComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.currentdate = new Date().toISOString().split("T")[0];;
+    this.currentdate = moment().format('YYYY-MM-DD')
+    console.log(this.currentdate)
     this.fetchDate(this.currentdate);
-
-  }
+  } 
 
   getYoutubeId(url: string){
       var regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#&?]*).*/;
@@ -40,6 +39,7 @@ export class CardComponent implements OnInit {
   fetchDate(fetchDate: string) {
     this.apiService.fetchApi(fetchDate)
     .subscribe((data) => {
+      ;
       this.apiResponseData = data
       this.getYoutubeId(this.apiResponseData.url)
       this.date = this.apiResponseData.date;
