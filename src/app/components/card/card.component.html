@@ -1,6 +1,6 @@
 
 <div class="card-wrapper">
-    <input [(ngModel)]="inputDate" type="date" id="date" max="{{ currentdate }}" (blur)="onChangeFetch()" value="{{ date }}">
+    <input [(ngModel)]="inputDate" type="date" id="date"  (blur)="onChangeFetch()" value="{{ date }}">
     <div>{{date}}</div>
 
     <div [ngSwitch]="media_type">
