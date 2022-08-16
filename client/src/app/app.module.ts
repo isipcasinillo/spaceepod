@@ -13,7 +13,7 @@ import { CardComponent } from './components/card/card.component';
 @NgModule({
   declarations: [
     AppComponent,
-    CardComponent
+    CardComponent,
   ],
   imports: [
     BrowserModule,

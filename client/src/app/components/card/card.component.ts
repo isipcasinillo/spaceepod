@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from 'src/app/services/api.service';
+import { ApiService } from '../../services/api.service';
 import * as moment from 'moment';
 
 
@@ -33,12 +33,11 @@ export class CardComponent implements OnInit {
       var match = url.match(regExp);
       var youtubeIdRegex = (match&&match[7].length==11)? match[7] : false;
       this.youtubeId = youtubeIdRegex;
-
   }
 
   fetchDate(fetchDate: string) {
     this.apiService.fetchApi(fetchDate)
-    .subscribe((data) => {
+    .subscribe((data: any) => {
       ;
       this.apiResponseData = data
       this.getYoutubeId(this.apiResponseData.url)
