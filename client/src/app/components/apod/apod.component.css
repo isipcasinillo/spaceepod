@@ -12,11 +12,11 @@ p {
     width: 500px;
     height: 700px;
     margin: 0 auto;
-    background-color: grey;
+    background-color: rgb(211, 211, 211);
 }
 
 .apod-carousel {
-    width: 200px;
+
     display: flex;
     flex-direction: row;
 }
@@ -24,11 +24,11 @@ p {
 .apod-main-wrapper {
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    /* align-content: stretch; */
+    justify-content: center; 
     width: 1000px;
     overflow: hidden;
     overflow-y:hidden;
+    margin: 0 auto;
 }
 
 .c0 {

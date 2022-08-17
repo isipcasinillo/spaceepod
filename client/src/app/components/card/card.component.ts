@@ -10,7 +10,6 @@ import * as moment from 'moment';
 })
 export class CardComponent implements OnInit {
   apiResponseData: any;
-  count: number = 0;
   inputDate: string = '';
   inputDatexxx: string = '';
   inputDay: string = '';
@@ -22,22 +21,14 @@ export class CardComponent implements OnInit {
   url: string = '';
   description: string = '';
   youtubeId: any  = '';
-  firstname: any= 'cyrilx';
   data: Array<any>= [];
   constructor(private apiService: ApiService) {
   }
 
-
-
   ngOnInit() {
     this.currentdate = moment().format('YYYY-MM-DD')
-    console.log(this.currentdate)
     this.fetchDate(this.currentdate);
-    this.firstname = 'cyril';
   }
-
-
-
 
   fetchDate(fetchDate: string) {
     this.apiService.fetchApi(fetchDate)

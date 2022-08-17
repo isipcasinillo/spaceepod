@@ -7,17 +7,20 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class ApodComponent implements OnInit {
   youtubeId: any = '';
+  inputDate: any = '';
   constructor() { }
 
   @Input() apodFetchData: any;
   @Output() newfetchEvent = new EventEmitter<any>();
-
+  @Output() newChangeEvent = new EventEmitter<any>();
   ngOnInit(): void {
   }
 
   apodFetch(value: string) {
-    console.log(value)
     this.newfetchEvent.emit(value);
+  }
+  apodDate(value: string) {
+    this.newChangeEvent.emit(value);
   }
   getYoutubeId(url: string){
     var regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#&?]*).*/;
