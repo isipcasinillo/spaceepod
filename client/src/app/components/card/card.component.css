@@ -1,5 +1,5 @@
 .card-image {
-    width: 500px;
+    width: 100%;
     height: 250px;
 }
 
@@ -9,6 +9,12 @@ p {
 }
 
 .card-wrapper {
-    width: 500px;
+    width: 50;
     margin: 0 auto;
+    background-color: RED;
+}
+
+.card-carousel {
+    display: flex;
+    flex-direction: row;
 }
