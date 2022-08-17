@@ -45,7 +45,7 @@ export class CardComponent implements OnInit {
     .subscribe((data: any) => {
       ;
       this.apiResponseData = data;
-
+      this.inputDate = this.apiResponseData.date
       console.log(this.apiResponseData)
       // this.apiResponseData = data
 
