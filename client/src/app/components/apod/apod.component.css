@@ -1,0 +1,46 @@
+.apod-image {
+    width: 500px;
+    height: 250px;
+}
+
+p {
+    width: 500px;
+    height: auto;
+}
+
+.apod-wrapper {
+    width: 500px;
+    height: 700px;
+    margin: 0 auto;
+    background-color: grey;
+}
+
+.apod-carousel {
+    width: 200px;
+    display: flex;
+    flex-direction: row;
+}
+
+.apod-main-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    /* align-content: stretch; */
+    width: 1000px;
+    overflow: hidden;
+    overflow-y:hidden;
+}
+
+.c0 {
+    width: 25%;
+    overflow: hidden;
+}
+
+.c1 {
+    width: 500px;
+}
+
+.c2 {
+    width: 25%;
+    overflow: hidden;
+}

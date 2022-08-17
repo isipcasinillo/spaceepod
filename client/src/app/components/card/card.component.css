@@ -1,5 +1,5 @@
-.card-image {
-    width: 100%;
+/* .card-image {
+    width: 600px;
     height: 250px;
 }
 
@@ -16,4 +16,5 @@ p {
 .card-carousel {
     display: flex;
     flex-direction: row;
-}
+    overflow-x:hidden;
+} */

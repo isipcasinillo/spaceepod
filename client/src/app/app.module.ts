@@ -9,11 +9,13 @@ import { YouTubePlayerModule } from "@angular/youtube-player";
 import { AppComponent } from './app.component';
 import { ApiService } from './services/api.service';
 import { CardComponent } from './components/card/card.component';
+import { ApodComponent } from './components/apod/apod.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CardComponent,
+    ApodComponent,
   ],
   imports: [
     BrowserModule,

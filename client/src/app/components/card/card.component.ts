@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component,  OnInit } from '@angular/core';
 import { ApiService } from '../../services/api.service';
 import * as moment from 'moment';
 
@@ -22,23 +22,22 @@ export class CardComponent implements OnInit {
   url: string = '';
   description: string = '';
   youtubeId: any  = '';
+  firstname: any= 'cyrilx';
+  data: Array<any>= [];
   constructor(private apiService: ApiService) {
   }
 
-  ngOnInit(): void {
+
+
+  ngOnInit() {
     this.currentdate = moment().format('YYYY-MM-DD')
     console.log(this.currentdate)
     this.fetchDate(this.currentdate);
+    this.firstname = 'cyril';
   }
 
-  getYoutubeId(url: string){
 
-      var regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#&?]*).*/;
-      var match = url.match(regExp);
-      var youtubeIdRegex = (match&&match[7].length==11)? match[7] : false;
-      this.youtubeId = youtubeIdRegex;
-      return this.youtubeId
-  }
+
 
   fetchDate(fetchDate: string) {
     this.apiService.fetchApi(fetchDate)
@@ -46,15 +45,6 @@ export class CardComponent implements OnInit {
       ;
       this.apiResponseData = data;
       this.inputDate = this.apiResponseData.date
-      console.log(this.apiResponseData)
-      // this.apiResponseData = data
-
-      // this.date = this.apiResponseData.date;
-      // this.media_type = this.apiResponseData.media_type
-      // this.url = this.apiResponseData.url
-      // this.copyright = this.apiResponseData?.copyright
-      // this.title = this.apiResponseData.title
-      // this.description = this.apiResponseData.explanation
     })
 
   }
@@ -63,4 +53,7 @@ export class CardComponent implements OnInit {
     this.fetchDate(this.inputDate)
   }
 
+  newfetchEventParent(currentDateCarousel: string) {
+    this.fetchDate(currentDateCarousel)
+  }
 }

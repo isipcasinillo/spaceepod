@@ -54,7 +54,7 @@ async function fetchBulkAll(currentDate) {
 }
 
 app.get('/api/:date', async function checkCache(req, res) {
- 
+
   const { date: currentDate } = req.params
   const prevdate = moment(currentDate).subtract(1, 'days').format('YYYY-MM-DD')
   const nextdate = moment(currentDate).add(1, 'days').format('YYYY-MM-DD')
@@ -71,7 +71,9 @@ app.get('/api/:date', async function checkCache(req, res) {
     // if date is current date only fetch the left and middle entries
     else if (currentDate === moment().format('YYYY-MM-DD')) {
       const fetchOnInitData = await fetchOnInit(currentDate)
-      const concurrentData = await fetchOnInitData.push({ message: 'No data sir for this day' })
+      await fetchOnInitData.push({
+        message: `There is not an Astronomy Picture of the Day for this date. Please select another date.`
+      })
       res.send(fetchOnInitData)
     } else if (await client.exists(`${currentDate}`) !== 1 && await client.exists(`${prevdate}`) !== 1 && await client.exists(`${nextdate}`) !== 1) {
       console.log('I am fetching all the datas!')
@@ -85,7 +87,7 @@ app.get('/api/:date', async function checkCache(req, res) {
       const { fetchedEntry, cachedEntry } = await fetchRemaining(currentDate)
       const currentResponse = await client.get(`${currentDate}`)
       const cachedEntryResponse = await client.get(`${cachedEntry}`)
-      console.log(typeof fetchedEntry, typeof currentResponse, typeof cachedEntryResponse  )
+      console.log(typeof fetchedEntry, typeof currentResponse, typeof cachedEntryResponse)
       res.send([
         fetchedEntry,
         JSON.parse(currentResponse),
