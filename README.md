@@ -24,17 +24,18 @@ cd spaceepod
 ```bash
 npm run install
 ```
+3. Get your NASA APOD API Key at https://api.nasa.gov/
+```bash
+API_KEY = 'EnterYourKey'
+```
 3. Create an .env file for your api key
 ```bash
-npm run install
+API_KEY = 'EnterYourKey'
 ```
-3. Install dependencies into the project's `lib`
-```bash
-npm run install
-```
-- Clone the project
-- run in your terminal inside the project directory : 'npm run install'
-- add an .env file with your API key from NASA APOD -> get it here https://api.nasa.gov/
+3. download and install redis https://github.com/microsoftarchive/redis/releases
+ 
+  run the redis-server file and redis-cli to access the db
+
 - download and install redis https://github.com/microsoftarchive/redis/releases
 - run the 'redis-server' file to start the server
 - go to your project and run : 'npm run develop'
