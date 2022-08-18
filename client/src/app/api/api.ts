@@ -1,1 +1,1 @@
-export const api_url = 'https://api.nasa.gov/planetary/apod?api_key=VSDIcILkW1pYNnyUHRjtAYIa2285Q2TbLH4QkzFj&date='
+// export const api_url = 'https://api.nasa.gov/planetary/apod?api_key=VSDIcILkW1pYNnyUHRjtAYIa2285Q2TbLH4QkzFj&date='
