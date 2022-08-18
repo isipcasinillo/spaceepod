@@ -20,25 +20,35 @@ git clone https://github.com/isipcasinillo/spaceepod
 ```bash
 cd spaceepod
 ```
+2. install the dev dependencies
+```bash
+npm install concurrently --save
+```
 3. Install dependencies into the project's `lib`
 ```bash
 npm run install
 ```
-3. Get your NASA APOD API Key at https://api.nasa.gov/
+4. Get your NASA APOD API Key at https://api.nasa.gov/
 ```bash
 API_KEY = 'EnterYourKey'
 ```
-3. Create an .env file for your api key
+5. Create an .env file for your api key
 ```bash
 API_KEY = 'EnterYourKey'
 ```
-3. download and install redis https://github.com/microsoftarchive/redis/releases
- 
-  run the redis-server file and redis-cli to access the db
+6. download and install redis https://github.com/microsoftarchive/redis/releases
+```bash
+run the redis-server file and redis-cli to access the db
+```
+7. Start your Angular and Node server
+```bash
+npm run develop
+```
+8. Go to your localhost
+```bash
+http://localhost:4200
+```
 
-- download and install redis https://github.com/microsoftarchive/redis/releases
-- run the 'redis-server' file to start the server
-- go to your project and run : 'npm run develop'
 
 ## Screenshot
 ![spaceepod](https://user-images.githubusercontent.com/76886344/185190056-e07ef02b-66cc-4384-8ed3-23bc356edb0c.PNG)
