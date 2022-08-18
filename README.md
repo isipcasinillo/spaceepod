@@ -30,7 +30,7 @@ npm run install
 ```
 4. Get your NASA APOD API Key at https://api.nasa.gov/
 ```bash
-API_KEY = 'EnterYourKey'
+'HAF124GAE25BVASDA'
 ```
 5. Create an .env file for your api key
 ```bash
