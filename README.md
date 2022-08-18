@@ -12,7 +12,26 @@
 This is a technical homework for Typescript and Node js Engineer at Spacee
 
 ## Installation 
-
+1. Clone the project
+```bash
+git clone https://github.com/isipcasinillo/spaceepod
+```
+2. `cd` into the new directory
+```bash
+cd spaceepod
+```
+3. Install dependencies into the project's `lib`
+```bash
+npm run install
+```
+3. Create an .env file for your api key
+```bash
+npm run install
+```
+3. Install dependencies into the project's `lib`
+```bash
+npm run install
+```
 - Clone the project
 - run in your terminal inside the project directory : 'npm run install'
 - add an .env file with your API key from NASA APOD -> get it here https://api.nasa.gov/
