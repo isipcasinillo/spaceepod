@@ -1,8 +1,32 @@
+
 <div class="apod-main-wrapper">
     <div *ngFor="let datax of apodFetchData; index as i">
-        <div class="apod-wrapper" class="c{{i}}" (click)="apodFetch(datax.date)">
+        <div class="apod-wrapper" class="c{{i}}" *ngIf="i !== 1" (click)="apodFetch(datax.date)">
+
             <div>{{datax.date}}</div>
-            <p *ngIf="datax.message"> {{datax.message}}</p>
+            <!-- <p *ngIf="datax.message"> {{datax.message}}</p> -->
+            <div [ngSwitch]="datax.media_type">
+                <div *ngSwitchCase="'image'">
+                    <img class="apod-image"src="{{ datax.url }}"/>
+
+                </div>
+                <div *ngSwitchCase="'video'">
+                    <youtube-player
+                        videoId="{{ getYoutubeId(datax.url) }}"
+                        suggestedQuality="highres"
+                        [height]="250"
+                        [width]="500"
+                        [startSeconds]="4"
+                        [endSeconds]="300">
+                    </youtube-player>
+                </div>
+            </div>
+            <div *ngIf="datax.copyright">copyright: {{datax.copyright}}</div>
+            <h4>{{datax.title}}</h4>
+            <p>{{datax.explanation}}</p>
+        </div>
+        <div class="apod-wrapper" class="c{{i}}" *ngIf="i === 1">
+            <input type="date" value="{{ datax.date}}" [(ngModel)]="tdate" (change)="fetchDateOnBlur()"/>
             <div [ngSwitch]="datax.media_type">
                 <div *ngSwitchCase="'image'">
                     <img class="apod-image"src="{{ datax.url }}"/>

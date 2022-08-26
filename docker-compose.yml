@@ -1,0 +1,35 @@
+version: "3.9" # optional since v1.27.0
+services:
+  # client:
+  #   container_name: client
+  #   restart: always
+  #   build: ./client
+  #   ports:
+  #     - 4200:80
+  #   depends_on:
+  #     - api
+  #   links:
+  #     - api
+  # api:
+  #   container_name: back-end
+  #   restart: always
+  #   build:
+  #     context: server
+  #     dockerfile: Dockerfile
+  #   ports:
+  #     - "3000:3000"
+  #   depends_on:
+  #     - redis
+  #   links:
+  #     - redis
+  redis:
+    container_name: redis
+    image: redis
+    command: redis-server
+    ports:
+      - "6379:6379"
+    volumes:
+      - cache:/data
+volumes:
+  cache:
+    driver: local

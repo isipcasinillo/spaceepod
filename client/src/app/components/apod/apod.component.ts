@@ -1,13 +1,15 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-
+import * as moment from 'moment';
 @Component({
   selector: 'app-apod',
   templateUrl: './apod.component.html',
   styleUrls: ['./apod.component.css']
 })
 export class ApodComponent implements OnInit {
+  tdate: string = moment().format('YYYY-MM-DD');
   youtubeId: any = '';
   inputDate: any = '';
+  dateValue: string = '';
   constructor() { }
 
   @Input() apodFetchData: any;
@@ -18,6 +20,7 @@ export class ApodComponent implements OnInit {
 
   apodFetch(value: string) {
     this.newfetchEvent.emit(value);
+    this.tdate = value;
   }
   apodDate(value: string) {
     this.newChangeEvent.emit(value);
@@ -29,5 +32,7 @@ export class ApodComponent implements OnInit {
     this.youtubeId = youtubeIdRegex;
     return this.youtubeId
   }
-
+  fetchDateOnBlur() {
+    this.apodFetch(this.tdate)
+  }
 }
